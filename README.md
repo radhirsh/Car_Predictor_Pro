@@ -9,7 +9,7 @@ Car Predictor Pro+ is an advanced machine learning application designed to predi
 | Machine Learning      | Python, Scikit-learn       |
 | Web Development       | Django, HTML, CSS, JavaScript |
 | Database Management   | MySQL, XAMPP                |
-|  Data Visualization   | MAtplotlib,Seaborn,Pandas    |
+|  Data Visualization   | Matplotlib,Seaborn,Pandas    |
 | Version Control       | Git, GitHub                 |
 
 ## Features
