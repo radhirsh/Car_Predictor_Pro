@@ -1,0 +1,124 @@
+.pageColor {
+  background-color: rgb(218, 218, 218)
+}
+hr{
+  border: 3px dotted black;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.ml-1 {
+  margin-left: 12px;
+}
+
+.mr-1 {
+  margin-right: 12px;
+}
+
+.float-right {
+  float: right;
+  margin-right: 14px;
+}
+
+.mb-1 {
+  margin-bottom: 10px;
+}
+
+
+.mt-1 {
+  margin-top: 14px;
+}
+.mt-2 {
+  margin-top: 21px;
+}
+
+.mb-4 {
+  margin-bottom: 24px;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.car-detail:hover {
+  box-shadow: 6px 6px 10px rgb(121, 121, 121);
+  transform: scale(1.1);
+}
+
+.car-detail {
+  transition: all .32s ease-in-out;
+}
+
+@media only screen and (min-width: 1200px) {
+  .carImg {
+    width: 325px;
+    height: 250px;
+    margin: 10px;
+  }
+
+  .carHeader {
+    display: flex;
+  }
+
+  .carTitle {
+    margin-left: 16px;
+  }
+
+  .carIndvImg {
+    width: 275px;
+    height: 245px;
+  }
+
+  .alignCenter {
+    align-content: center;
+
+  }
+
+  .carContainer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+}
+
+
+
+@media only screen and (max-width: 475px) {
+  .carImg {
+    width: 225px;
+    height: 150px;
+    margin: 10px;
+  }
+
+  .carIndvImg {
+    width: 225px;
+    height: 175px;
+  }
+
+  .carHeader {
+    text-align: center;
+  }
+  
+  .carBox {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 750px) and (max-width: 1150px) {
+  .carImg {
+    width: 245px;
+    height: 175px;
+  }
+
+  .carBox {
+    display: flex;
+    justify-content: center;
+  }
+
+}

@@ -1,0 +1,7 @@
+{% extends 'base.html' %} {% block body %}
+{% csrf_token %}
+{% for cars in car_post %}
+<h1>{{ cars.make }}</h1>
+<!-- <img src="{{ cars.car_img }}" alt=""> -->
+{% endfor %}
+{% endblock body %}

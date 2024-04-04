@@ -1,0 +1,91 @@
+{% extends 'base.html' %} {% block body %}
+<div class="navbar-fixed">
+    <nav class="z-depth-2">
+        <div class="nav-wrapper grey darken-3">
+            <span class="brand-logo" style="margin-left: 12px">CarPredictor Pro+</span>
+            <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="{% url 'post-vehicle' %} ">Post here for Sale</a></li>
+                <li><a href="{% url 'index' %} ">Price Prediction</a></li>
+
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<ul class="sidenav" id="mobile-nav">
+
+    <li><a href="{% url 'post-vehicle' %} ">Post your Vehicle</a></li>
+</ul>
+<div class="container">
+    <div class="card">
+        <div class="card-title">
+            <h1 class="black-text lighten-1 text-center">Avaliable Cars</h1>
+            <p class="text-center">*click car image to see details</p>
+            <div class="text-center">
+                <form action="{% url 'post-vehicle' %} ">
+                    <button class="btn waves-effect waves-light blue darken-3" type="submit"><i class="fas fa-plus"></i>
+                        Post a ride</button>
+                </form>
+            </div>
+        </div>
+        <div class="card-content">
+
+            <div class="carContainer">
+                <div class="center-align">
+                    {% for car in car_post %}
+
+                    <a href="{% url 'car-page' car.id %}">
+                        <img class="carImg car-detail" src="{{ car.car_img }}" alt="No Image" />
+                    </a>
+                    
+
+                    {% endfor %} {% endblock body%}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="card">
+        <div class="card-title">
+            <h1 class="black-text lighten-1 text-center">Price Prediction</h1>
+            <p class="text-center">Fill in the details below for price prediction:</p>
+        </div>
+        <div class="card-content">
+            <form action="{% url 'price-prediction' %}" method="post">
+                {% csrf_token %}
+                <div class="input-field">
+                    <input id="engine_size" type="number" name="engine_size" required>
+                    <label for="engine_size">Engine Size</label>
+                </div>
+                <div class="input-field">
+                    <input id="horsepower" type="number" name="horsepower" required>
+                    <label for="horsepower">Horsepower</label>
+                </div>
+                <div class="input-field">
+                    <input id="city_mpg" type="number" name="city_mpg" required>
+                    <label for="city_mpg">City MPG</label>
+                </div>
+                <button class="btn waves-effect waves-light blue darken-3" type="submit">Predict Price</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <!-- Add more social media icons or links as needed -->
+        </div>
+        <div class="copyright">
+            &copy; 2024 Sridhar & Sruthi. All rights reserved.
+        </div>
+        <div class="contact">
+            Contact us: <a href="mailto:sridharsukumar2001@gmail.com">sridharsukumar2001@gmail.com</a>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block body %}
+<div class="navbar-fixed">
+    <nav class="z-depth-2">
+        <div class="nav-wrapper grey darken-3">
+            <span class="brand-logo" style="margin-left: 12px">Buy-a-Ride</span>
+            <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="{% url 'post-vehicle' %}">Post a ride</a></li>
+                <li><a href="{% url 'landing' %}">Back</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<ul class="sidenav" id="mobile-nav">
+    <li><a href="{% url 'post-vehicle' %}">Post a ride</a></li>
+    <li><a href="{% url 'landing' %}">Back</a></li>
+</ul>
+<div class="container">
+    <div class="card">
+        <div class="card-content">
+            {% for car in car_receipt %}
+            <p>
+                <a href="{% url 'view-receipt' car.id %}">{{car.name}}</a>
+            </p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock body%}

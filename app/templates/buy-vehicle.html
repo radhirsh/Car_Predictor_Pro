@@ -1,0 +1,51 @@
+{% extends 'base.html' %} {% block body %}
+<div class="navbar-fixed">
+    <nav class="z-depth-2">
+        <div class="nav-wrapper grey darken-3">
+            <span class="brand-logo" style="margin-left: 12px">Buy-a-Ride</span>
+            <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="{% url 'post-vehicle' %}">Post a ride</a></li>
+                <li><a href="{% url 'landing' %}">Back</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<ul class="sidenav" id="mobile-nav">
+    <li><a href="{% url 'post-vehicle' %}">Post a ride</a></li>
+    <li><a href="{% url 'landing' %}">Back</a></li>
+</ul>
+<div class="container">
+    <div class="card">
+        <div class="card-content">
+            <form action="{% url 'buy-vehicle' %}" method="post">
+                {% csrf_token %}
+                <div>
+                    <h3 class="left-align">Contact Information</h3>
+                    <p>Buyer's Name:</p> {{ buy_vehicle.name }}
+                    <p>Phone Number:</p> {{ buy_vehicle.p_number }}
+                </div>
+                <div>
+                    <h3 class="left-align">Address</h3>
+                    <p>Street Name:</p> {{ buy_vehicle.street }}
+                    <p>City:</p> {{ buy_vehicle.city }}
+                    <p>State:</p> {{ buy_vehicle.state }}
+                    <p>Zip Code:</p> {{ buy_vehicle.z_code }}
+                </div>
+                <div class="d-flex">
+                    <button type="submit" class="btn waves-effect waves-light green darken-3 mr-1"><i
+                            class="fas fa-money-bill-alt"></i> Submit</button>
+
+            </form>
+            <form action="{% url 'landing' %}">
+                <button type="submit" class="btn waves-effect waves-light grey darken-3 "><i class="fas fa-home"></i>
+                    Home</button>
+            </form>
+
+        </div>
+
+
+    </div>
+</div>
+{% endblock body %}
