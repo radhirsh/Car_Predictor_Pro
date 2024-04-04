@@ -39,3 +39,10 @@ Car Predictor Pro+ is an advanced machine learning application designed to predi
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+![image](https://github.com/radhirsh/Car_Predictor_Pro/assets/99467025/a6c3d724-3aeb-422b-a43c-211f21dbb969)
+
+![image](https://github.com/radhirsh/Car_Predictor_Pro/assets/99467025/bb0635fb-3217-44c1-9576-91557ac076b9)
+
+
+
